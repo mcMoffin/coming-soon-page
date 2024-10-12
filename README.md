@@ -30,12 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot of the Ping coming soon page](./screenshot.jpg)
+screen shot: [./screenshot.jpg]
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/mcMoffin/coming-soon-page)
-- Live Site URL: [Add live site URL here](https://mcmoffin.github.io/coming-soon-page/)
+- Solution URL: [https://github.com/mcMoffin/coming-soon-page]
+- Live Site URL: [https://mcmoffin.github.io/coming-soon-page/]
 
 ## My process
 
