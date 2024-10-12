@@ -1,0 +1,222 @@
+body {
+    padding: 85px 55px 10px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin", Arial, sans-serif;
+    font-size: 20px;
+}
+
+// reset
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        #logo {
+            max-width: 23%;
+            height: auto;
+            margin-bottom: 2.5em;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: hsl(0, 0%, 59%);
+
+            strong {
+                color: black;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+article {
+    max-width: 642px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: calc(100% - 30px);
+            height: 46px;
+            border: 1px solid hsl(223, 100%, 88%);
+            border-radius: 50px;
+            padding-left: 25px;
+
+            &::placeholder {
+                font-size: 16px;
+                color: hsl(223, 100%, 88%);
+                opacity: 0.7;
+            }
+        }
+
+        .mobile-error {
+            font-size: 12px;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            height: 46px;
+            margin-top: 15px;
+            border: solid 0;
+            border-radius: 50px;
+            background-color: hsl(223, 87%, 63%);
+            box-shadow: 0px 5px 10px hsla(223, 87%, 63%, 0.45);
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+        }
+
+        button:hover {
+            background-color: hsla(223, 87%, 63%, 0.8);
+        }
+    }
+
+    .web-error {
+        display: none;
+    }
+
+    .dashboard-img {
+        width: 100%;
+        height: auto;
+        margin-top: 85px;
+    }
+
+    .error-input {
+        border-color: hsl(354, 100%, 66%);
+    }
+}
+
+.error {
+    width: calc(100% - 25px);
+    padding-left: 25px;
+    line-height: 5px;
+    text-align: left;
+    display: block;
+    color: hsl(354, 100%, 66%);
+    font-style: italic;
+}
+
+footer {
+    width: 100%;
+    margin-top: 85px;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 59%);
+
+    .social-icons {
+        display: flex;
+        gap: 1rem; // Adjust the gap
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: solid 1.5px hsl(223, 100%, 88%);
+            border-radius: 50px;
+            color: hsl(223, 87%, 63%);
+            cursor: pointer;
+
+            i {
+                text-align: center;
+                font-size: 12.5px;
+            }
+        }
+
+        .icon-wrapper:hover {
+            background-color: hsl(223, 87%, 63%);
+            color: white;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header {
+        .header-content {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    article {
+        form {
+            flex-direction: row;
+            justify-content: center;
+
+            input {
+                width: 420px;
+                margin-bottom: 0;
+                margin-right: 15px;
+            }
+
+            button {
+                width: 200px;
+                margin-top: 0px;
+            }
+
+            .mobile-error {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        font-size: 1rem;
+
+        .social-icons {
+            .icon-wrapper {
+                width: 35px;
+                height: 35px;
+
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
