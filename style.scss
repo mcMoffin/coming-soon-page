@@ -8,6 +8,7 @@ body {
     box-sizing: border-box;
     font-family: "Libre Franklin", Arial, sans-serif;
     font-size: 20px;
+    color: hsl(209, 33%, 12%);
 }
 
 // reset
@@ -46,7 +47,7 @@ header {
             color: hsl(0, 0%, 59%);
 
             strong {
-                color: black;
+                color: hsl(209, 33%, 12%);
                 font-weight: 700;
             }
         }

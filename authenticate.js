@@ -1,46 +1,45 @@
 // Import jQuery
 $(document).ready(function () {
     
-    // Add novalidate attribute to the form
-    $('#form').attr('novalidate', 'novalidate');
+    const $form = $('#form');
+    const $emailInput = $('#email');
+    const $errorMessage = $('.error');
+    const $errorMessageMobile = $('.mobile-error');
+    const $errorMessageWeb = $('.web-error');
 
-    $('#form').on('submit', function(event) {
+    // Add novalidate attribute to the form
+    $form.attr('novalidate', 'novalidate');
+
+    $form.on('submit', function(event) {
         event.preventDefault();
         updateScreenRenders();
     });
 
     function updateScreenRenders() {
-        const emailInput = $('#email');
-        const errorMessageMobile = $('.mobile-error');
-        const errorMessageWeb = $('.web-error');
-    
-        if (!validateEmail(emailInput.val().trim())) {
-            if(getScreenDimensions().width > 1440) {
-                errorMessageWeb.show();
-                errorMessageMobile.hide();
-            } else {
-                errorMessageMobile.show();
-                errorMessageWeb.hide();
-            }
-            emailInput.addClass('error-input');
+        const emailValue = $emailInput.val().trim();
+        const isWideScreen = window.innerWidth >= 1440;
+        const { showError, errorText } = validateEmail(emailValue);
+
+        $emailInput.toggleClass('error-input', showError);
+        $errorMessage.text(errorText);
+
+        if (showError) {
+            $errorMessageWeb.toggle(isWideScreen);
+            $errorMessageMobile.toggle(!isWideScreen);
         } else {
-            errorMessageMobile.hide();
-            errorMessageWeb.hide();
-            emailInput.removeClass('error-input');
+            $errorMessageWeb.add($errorMessageMobile).hide();
         }
     }
 
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        if (email === '') {
+            return { showError: true, errorText: 'Email address is required' };
+        }
+        return emailRegex.test(email)
+            ? { showError: false, errorText: '' }
+            : { showError: true, errorText: 'Please provide a valid email address' };
     }
 
-    function getScreenDimensions() {
-        return {
-            width: window.innerWidth,
-            height: window.innerHeight
-        };
-    }
-
-    $(window).on('resize', updateScreenRenders);
+    $(window).on('resize', $.throttle(250, updateScreenRenders));
 });
