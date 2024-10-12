@@ -1,4 +1,3 @@
-// Import jQuery
 $(document).ready(function () {
     
     const $form = $('#form');
@@ -7,7 +6,6 @@ $(document).ready(function () {
     const $errorMessageMobile = $('.mobile-error');
     const $errorMessageWeb = $('.web-error');
 
-    // Add novalidate attribute to the form
     $form.attr('novalidate', 'novalidate');
 
     $form.on('submit', function(event) {

@@ -11,8 +11,6 @@ body {
     color: hsl(209, 33%, 12%);
 }
 
-// reset
-
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -145,7 +143,7 @@ footer {
 
     .social-icons {
         display: flex;
-        gap: 1rem; // Adjust the gap
+        gap: 1rem;
 
         .icon-wrapper {
             display: flex;
